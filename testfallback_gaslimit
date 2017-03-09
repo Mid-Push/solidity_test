@@ -1,0 +1,11 @@
+pragma solidity ^0.4.0;
+
+contract A{
+    uint a=132;
+   function(){
+      B b=new B();
+   }
+}
+contract B{
+    
+}
