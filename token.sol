@@ -16,29 +16,28 @@ contract token{
         name=_name;
         return true;
     }
-    function transfer()
+    function reset()
     {
-        if(tc.istransfer(msg.sender))
+       // if(tc.istransfer(msg.sender))
             owner=msg.sender;
     }
     function getname()constant returns (string){
-        if (msg.sender==owner)
-            return name;
-        return "failed";
+       return name;
     }
     function getowner()constant returns(address){
         return owner;
     }
-    function testotherpeople() constant returns (string){
+    function testotherpeople()  returns (string){
         if(owner==msg.sender)
-            return "hello";
-        return "you are not invited";
+            name="yes";
+        name="no";
+        
     }
     
 }
 contract Tokencreator{
     token public mytoken;
-    function createtoken(string _name) returns (address)
+    function createtoken(string _name) returns (token)
     {
         mytoken=new token(_name);
         mytoken.getname();
