@@ -16,10 +16,10 @@ contract token{
         name=_name;
         return true;
     }
-    function transfer(address addr)
+    function transfer()
     {
-        if(tc.istransfer(addr))
-            owner=addr;
+        if(tc.istransfer(msg.sender))
+            owner=msg.sender;
     }
     function getname()constant returns (string){
         if (msg.sender==owner)
@@ -28,6 +28,11 @@ contract token{
     }
     function getowner()constant returns(address){
         return owner;
+    }
+    function testotherpeople() constant returns (string){
+        if(owner==msg.sender)
+            return "hello";
+        return "you are not invited";
     }
     
 }
