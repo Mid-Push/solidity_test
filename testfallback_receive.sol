@@ -10,7 +10,7 @@ contract A
     {
         return x;
     }
-    function getbalance()returns(uint)
+    function getbalance() constant returns(uint)
     {
         return this.balance;
     }
