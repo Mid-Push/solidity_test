@@ -32,7 +32,7 @@ contract token{
     
 }
 contract Tokencreator{
-    token mytoken;
+    token public mytoken;
     function createtoken(string _name) returns (address)
     {
         mytoken=new token(_name);
@@ -42,7 +42,7 @@ contract Tokencreator{
     function istransfer(address addr) returns (bool){
         return true;
     }
-    function gettokenname()  returns(string){
+    function gettokenname()  constant returns(string){
         mytoken.getname();
         
     }
