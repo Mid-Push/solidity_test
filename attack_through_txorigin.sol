@@ -8,9 +8,9 @@ contract account{
     }
     function spend(address dest,uint x)returns(bool){
         
-        if(tx.origin!=msg.sender)
+        if(tx.origin!=owner)
             throw;
-        x=x*(10**18);
+        //x=x;
         return dest.call.value(x)();
     }
 }
